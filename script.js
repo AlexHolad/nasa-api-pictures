@@ -48,7 +48,7 @@ function updateDOM() {
     const date = document.createElement("strong");
     date.textContent = item.date;
     // Copyright
-    const copyrightResult = result.copyright === undefined ? '' : result.copyright;
+    const copyrightResult = item.copyright === undefined ? '' : item.copyright;
     const copyright = document.createElement('span');
     copyright.textContent = ` ${copyrightResult}`;
     // Append
@@ -69,8 +69,10 @@ async function getNasaPictures() {
     updateDOM();
   } catch (error) {
     // Catch Error Here
+    console.log(error);
   }
 }
 
 // On Load
 getNasaPictures();
+
